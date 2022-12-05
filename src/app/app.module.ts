@@ -6,17 +6,39 @@ import { AppComponent } from './app.component';
 import { PatientEntryComponent } from './patient-entry/patient-entry.component';
 import { PatientSearchComponent } from './patient-search/patient-search.component';
 import { PatientDeleteComponent } from './patient-delete/patient-delete.component';
+import { RouterModule, Routes } from '@angular/router';
+import { PatientviewComponent } from './patientview/patientview.component';
+const myRoute:Routes=[
+  {
+    path:"",
+    component:PatientEntryComponent
+  },
+  {
+    path:"search",
+    component:PatientSearchComponent
+  },
+  {
+    path:"delete",
+    component:PatientDeleteComponent
+  },
+  {
+    path:"view",
+    component:PatientviewComponent
+  }
+]
 
 @NgModule({
   declarations: [
     AppComponent,
     PatientEntryComponent,
     PatientSearchComponent,
-    PatientDeleteComponent
+    PatientDeleteComponent,
+    PatientviewComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RouterModule.forRoot(myRoute)
   ],
   providers: [],
   bootstrap: [AppComponent]
